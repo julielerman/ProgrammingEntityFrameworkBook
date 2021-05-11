@@ -1,6 +1,6 @@
 # Programming Entity Framework Books
 
- Code samples three editions of my O'Reilly Programming Entity Framework books.
+ Code samples for three editions of my O'Reilly Programming Entity Framework books.
 
 
 [Programming Entity Framework 2nd Edition](https://www.oreilly.com/library/view/programming-entity-framework/9780596807276/
