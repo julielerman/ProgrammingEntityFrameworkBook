@@ -12,9 +12,9 @@ Co-Authored with Rowan Miller
  Published Nov 2011  
 
 
- [Programming Entity Framework: DbContext](https://www.oreilly.com/library/view/programming-entity-framework/9781449331825/)
+ [Programming Entity Framework: DbContext](https://www.oreilly.com/library/view/programming-entity-framework/9781449331825/)  
  Co-Authored with Rowan Miller
- Published Nov 2011
+ Published Feb 2012
 
 
 
