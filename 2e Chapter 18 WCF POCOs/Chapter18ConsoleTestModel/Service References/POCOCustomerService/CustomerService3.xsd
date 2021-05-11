@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BAGA" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BAGA" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1117/CustomerService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/POCO.State" />
+  <xs:complexType name="ArrayOfCustomerNameAndID">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerNameAndID" nillable="true" type="tns:CustomerNameAndID" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerNameAndID" nillable="true" type="tns:ArrayOfCustomerNameAndID" />
+  <xs:complexType name="CustomerNameAndID">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/POCO.State" base="q1:StateObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerNameAndID" nillable="true" type="tns:CustomerNameAndID" />
+  <xs:complexType name="ArrayOfTrip">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Trip" nillable="true" type="tns:Trip" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrip" nillable="true" type="tns:ArrayOfTrip" />
+  <xs:complexType name="Trip">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/POCO.State" base="q2:StateObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Activities" nillable="true" type="tns:ArrayOfActivity" />
+          <xs:element minOccurs="0" name="Destination" nillable="true" type="tns:Destination" />
+          <xs:element minOccurs="0" name="DestinationID" type="xs:int" />
+          <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Lodging" nillable="true" type="tns:Lodging" />
+          <xs:element minOccurs="0" name="LodgingID" type="xs:int" />
+          <xs:element minOccurs="0" name="Reservations" nillable="true" type="tns:ArrayOfReservation" />
+          <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TripCostUSD" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TripDetails" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TripID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Trip" nillable="true" type="tns:Trip" />
+  <xs:complexType name="ArrayOfActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Activity" nillable="true" type="tns:Activity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActivity" nillable="true" type="tns:ArrayOfActivity" />
+  <xs:complexType name="Activity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/POCO.State" base="q3:StateObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActivityID" type="xs:int" />
+          <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Equipments" nillable="true" type="tns:ArrayOfEquipment" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimaryPrefCustomers" nillable="true" type="tns:ArrayOfCustomer" />
+          <xs:element minOccurs="0" name="SecondaryPrefCustomers" nillable="true" type="tns:ArrayOfCustomer" />
+          <xs:element minOccurs="0" name="Trips" nillable="true" type="tns:ArrayOfTrip" />
+          <xs:element minOccurs="0" name="imagepath" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Activity" nillable="true" type="tns:Activity" />
+  <xs:complexType name="ArrayOfEquipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Equipment" nillable="true" type="tns:Equipment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEquipment" nillable="true" type="tns:ArrayOfEquipment" />
+  <xs:complexType name="Equipment">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/POCO.State" base="q4:StateObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Activities" nillable="true" type="tns:ArrayOfActivity" />
+          <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Equipment" nillable="true" type="tns:Equipment" />
+  <xs:complexType name="ArrayOfCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomer" nillable="true" type="tns:ArrayOfCustomer" />
+  <xs:complexType name="Customer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Contact">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CustRowVersion" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="CustomerType" nillable="true" type="tns:CustomerType" />
+          <xs:element minOccurs="0" name="CustomerTypeID" type="xs:int" />
+          <xs:element minOccurs="0" name="DietaryRestrictions" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HeightInches" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="InitialDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimaryActivity" nillable="true" type="tns:Activity" />
+          <xs:element minOccurs="0" name="PrimaryActivityID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PrimaryDestination" nillable="true" type="tns:Destination" />
+          <xs:element minOccurs="0" name="PrimaryDestinationID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Reservations" nillable="true" type="tns:ArrayOfReservation" />
+          <xs:element minOccurs="0" name="SecondaryActivity" nillable="true" type="tns:Activity" />
+          <xs:element minOccurs="0" name="SecondaryActivityID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SecondaryDestination" nillable="true" type="tns:Destination" />
+          <xs:element minOccurs="0" name="SecondaryDestinationID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="WeightPounds" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:complexType name="Contact">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/POCO.State" base="q5:StateObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfAddress" />
+          <xs:element minOccurs="0" name="ContactID" type="xs:int" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Lodgings" nillable="true" type="tns:ArrayOfLodging" />
+          <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RowVersion" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Contact" nillable="true" type="tns:Contact" />
+  <xs:complexType name="ArrayOfAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddress" nillable="true" type="tns:ArrayOfAddress" />
+  <xs:complexType name="Address">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/POCO.State" base="q6:StateObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddressType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Contact" nillable="true" type="tns:Contact" />
+          <xs:element minOccurs="0" name="ContactID" type="xs:int" />
+          <xs:element minOccurs="0" name="CountryRegion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Mail" nillable="true" type="tns:Mail" />
+          <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RowVersion" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="addressID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="Mail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateProvince" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Mail" nillable="true" type="tns:Mail" />
+  <xs:complexType name="ArrayOfLodging">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Lodging" nillable="true" type="tns:Lodging" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLodging" nillable="true" type="tns:ArrayOfLodging" />
+  <xs:complexType name="Lodging">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/POCO.State" base="q7:StateObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Contact" nillable="true" type="tns:Contact" />
+          <xs:element minOccurs="0" name="ContactID" type="xs:int" />
+          <xs:element minOccurs="0" name="Destination" nillable="true" type="tns:Destination" />
+          <xs:element minOccurs="0" name="LocationID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LodgingID" type="xs:int" />
+          <xs:element minOccurs="0" name="LodgingName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TomorrowForecast" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Trips" nillable="true" type="tns:ArrayOfTrip" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Lodging" nillable="true" type="tns:Lodging" />
+  <xs:complexType name="Destination">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/POCO.State" base="q8:StateObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DestinationID" type="xs:int" />
+          <xs:element minOccurs="0" name="Lodgings" nillable="true" type="tns:ArrayOfLodging" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimaryPrefCustomers" nillable="true" type="tns:ArrayOfCustomer" />
+          <xs:element minOccurs="0" name="SecondaryPrefCustomers" nillable="true" type="tns:ArrayOfCustomer" />
+          <xs:element minOccurs="0" name="Trips" nillable="true" type="tns:ArrayOfTrip" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Destination" nillable="true" type="tns:Destination" />
+  <xs:complexType name="CustomerType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/POCO.State" base="q9:StateObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerTypeID" type="xs:int" />
+          <xs:element minOccurs="0" name="Customers" nillable="true" type="tns:ArrayOfCustomer" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerType" nillable="true" type="tns:CustomerType" />
+  <xs:complexType name="ArrayOfReservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Reservation" nillable="true" type="tns:Reservation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReservation" nillable="true" type="tns:ArrayOfReservation" />
+  <xs:complexType name="Reservation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/POCO.State" base="q10:StateObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContactID" type="xs:int" />
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
+          <xs:element minOccurs="0" name="Payments" nillable="true" type="tns:ArrayOfPayment" />
+          <xs:element minOccurs="0" name="ReservationDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ReservationID" type="xs:int" />
+          <xs:element minOccurs="0" name="RowVersion" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Trip" nillable="true" type="tns:Trip" />
+          <xs:element minOccurs="0" name="TripDetails" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TripID" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Reservation" nillable="true" type="tns:Reservation" />
+  <xs:complexType name="ArrayOfPayment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Payment" nillable="true" type="tns:Payment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPayment" nillable="true" type="tns:ArrayOfPayment" />
+  <xs:complexType name="Payment">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/POCO.State" base="q11:StateObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ContactID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PaymentDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PaymentID" type="xs:int" />
+          <xs:element minOccurs="0" name="Reservation" nillable="true" type="tns:Reservation" />
+          <xs:element minOccurs="0" name="ReservationID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="RowVersion" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Payment" nillable="true" type="tns:Payment" />
+</xs:schema>

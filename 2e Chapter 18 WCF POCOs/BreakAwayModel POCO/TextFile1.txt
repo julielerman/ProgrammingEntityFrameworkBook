@@ -1,0 +1,1 @@
+﻿edmgen /mode:ViewGeneration /inssdl:f:\models\BAModel.ssdl /incsdl:f:\models\BAModel.csdl /inmsl:f:\models\BAModel.msl /p:"F:\_EF2_Samples_For_Deploy\2e Chapter 18 WCF POCOs\BreakAwayModel POCO\BreakAwayModelPOCO.csproj"

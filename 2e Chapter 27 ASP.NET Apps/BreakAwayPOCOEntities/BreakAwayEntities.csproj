@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F37243AD-C624-458A-A81C-8CBACB026BF5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BAGA</RootNamespace>
+    <AssemblyName>BreakAwayEntities</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activity.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Address.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BreakAway.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Contact.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerNameAndID.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomersinPastYear.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerType.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Destination.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lodging.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mail.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NonCustomer.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Partial Classes Added in Chapter 10\Address.cs" />
+    <Compile Include="Partial Classes Added in Chapter 10\Lodging.cs" />
+    <Compile Include="Partial Classes Added in Chapter 10\Reservation.cs" />
+    <Compile Include="Partial Classes Added in Chapter 10\Trip.cs" />
+    <Compile Include="Payment.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectedCustomer.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservation.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resort.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Trip.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TripPayment.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpcomingTripParticipant.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vOfficeAddress.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vPaymentsforPeriod.cs">
+      <DependentUpon>BreakAway.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BreakAway.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BreakAway.cs</LastGenOutput>
+      <CustomToolNamespace>BAGA</CustomToolNamespace>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\POCOState\POCOState.csproj">
+      <Project>{1BC193E5-B315-4D24-B82B-7B32BECA375A}</Project>
+      <Name>POCOState</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

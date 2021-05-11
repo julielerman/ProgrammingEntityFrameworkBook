@@ -1,0 +1,28 @@
+c.Title,c.PrimaryDestinationID,c.SecondaryDestinationID,c.PrimaryActivityID,c.SecondaryActivityID,c.Notes,
+c.BirthDate,c.HeightInches,c.WeightPounds,c.DietaryRestrictions,c.PrimaryDestination.Name as D1Name,c.SecondaryDestination.Name as D2Name,
+c.PrimaryActivity.Name as A1Name,c.SecondaryActivity.Name as A2Name
+
+
+
+ <EntityType Name="ProjectedCustomer" >
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Type="Int32" Name="ContactID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FirstName" Nullable="false" DefaultValue="George" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Title" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="PrimaryDestinationID" />
+          <Property Type="Int32" Name="SecondaryDestinationID" />
+          <Property Type="Int32" Name="PrimaryActivityID" />
+          <Property Type="Int32" Name="SecondaryActivityID" />
+          <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="BirthDate" />
+          <Property Type="Int32" Name="HeightInches" />
+          <Property Type="Int32" Name="WeightPounds" />
+          <Property Type="String" Name="DietaryRestrictions" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PrimaryDestinationName" />
+          <Property Type="String" Name="SecondaryDestinationName" />
+          <Property Type="String" Name="PrimaryActivityName" />
+          <Property Type="String" Name="SecondaryActivityName" />
+        </EntityType>

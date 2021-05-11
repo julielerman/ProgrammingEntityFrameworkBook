@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter 9 WPF", "Chapter 9 WPF\Chapter 9 WPF.csproj", "{37876143-B438-4D25-8505-A284F55A4914}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakAwayModel", "BreakAwayModel\BreakAwayModel.csproj", "{DE7F6BF5-E93D-4562-9B66-32637BF0B306}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37876143-B438-4D25-8505-A284F55A4914}.Debug|x86.ActiveCfg = Debug|x86
+		{37876143-B438-4D25-8505-A284F55A4914}.Debug|x86.Build.0 = Debug|x86
+		{37876143-B438-4D25-8505-A284F55A4914}.Release|x86.ActiveCfg = Release|x86
+		{37876143-B438-4D25-8505-A284F55A4914}.Release|x86.Build.0 = Release|x86
+		{DE7F6BF5-E93D-4562-9B66-32637BF0B306}.Debug|x86.ActiveCfg = Debug|x86
+		{DE7F6BF5-E93D-4562-9B66-32637BF0B306}.Debug|x86.Build.0 = Debug|x86
+		{DE7F6BF5-E93D-4562-9B66-32637BF0B306}.Release|x86.ActiveCfg = Release|x86
+		{DE7F6BF5-E93D-4562-9B66-32637BF0B306}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,88 @@
+﻿<Window x:Class="Chapter_9_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="466" Width="631" Loaded="Window_Loaded" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:my="clr-namespace:BAGA;assembly=BreakAwayModel">
+    <Window.Resources>
+        <CollectionViewSource x:Key="tripViewSource" 
+                              d:DesignSource="{d:DesignInstance my:Trip, CreateList=True}"/>
+        <CollectionViewSource x:Key="destinationViewSource" d:DesignSource="{d:DesignInstance my:Destination, CreateList=True}" />
+        <CollectionViewSource x:Key="lodgingViewSource" d:DesignSource="{d:DesignInstance my:Lodging, CreateList=True}" />
+        <CollectionViewSource x:Key="tripActivitiesViewSource" Source="{Binding Path=Activities, Source={StaticResource tripViewSource}}" />
+    </Window.Resources>
+    <Grid DataContext="{StaticResource destinationViewSource}">
+        <ListBox Height="136" HorizontalAlignment="Left" Margin="73,32,0,0" Name="tripListBox" VerticalAlignment="Top" Width="406"
+                 ItemsSource="{Binding Source={StaticResource tripViewSource} }"
+                 >
+            <ListBox.ItemTemplate>
+                <DataTemplate >
+                    <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="200"
+                                   Text="{Binding Path=Destination.Name}"/>
+                            <TextBlock Text="{Binding
+                                   Path=StartDate, StringFormat=MM/dd/yyyy}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid  HorizontalAlignment="Left" Margin="89,190,0,0" Name="grid1" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="Start Date:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <DatePicker Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Margin="3" Name="startDateDatePicker" 
+                        SelectedDate="{Binding Path=StartDate}"
+                        VerticalAlignment="Center" 
+                        DataContext="{Binding Source={StaticResource tripViewSource} }">
+             
+            </DatePicker>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Margin="310,190,0,0" Name="grid2" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="End Date:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <DatePicker Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Margin="3" Name="endDateDatePicker" SelectedDate="{Binding ElementName=tripListBox, Path=SelectedItem.EndDate}" VerticalAlignment="Center" />
+        </Grid>
+        <ComboBox DisplayMemberPath="Name" Height="23" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="89,253,0,0" Name="destinationComboBox" SelectedValuePath="DestinationID"
+                  SelectedValue="{Binding ElementName=tripListBox,
+                         Path=SelectedItem.DestinationID}"
+        VerticalAlignment="Top" Width="176" DropDownClosed="destinationComboBox_DropDownClosed">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <ComboBox DisplayMemberPath="LodgingName" Height="23" HorizontalAlignment="Right" ItemsSource="{Binding Source={StaticResource lodgingViewSource}}" Margin="0,253,84,0" Name="lodgingComboBox" 
+                  SelectedValuePath="LodgingID" 
+                  SelectedValue="{Binding ElementName=tripListBox,
+                                           Path=SelectedItem.LodgingID}"
+                    VerticalAlignment="Top" Width="215">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <ListBox DisplayMemberPath="Name" Height="100" HorizontalAlignment="Left" 
+                 ItemsSource="{Binding Source={StaticResource tripActivitiesViewSource}}" 
+                 Margin="51,315,0,0" Name="activitiesListBox" SelectedValuePath="ActivityID" 
+                 VerticalAlignment="Top" Width="227" />
+        <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="501,145,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="350,333,0,0" Name="activityComboBox" VerticalAlignment="Top" Width="175" SelectedValuePath="ActivityID" DisplayMemberPath="Name" />
+        <Button Content="Add Activity to Trip" Height="23" HorizontalAlignment="Left" Margin="350,374,0,0" Name="btnAddActivity" VerticalAlignment="Top" Width="129" Click="btnAddActivity_Click" />
+        <Button Content="New Trip" Height="23" HorizontalAlignment="Left" Margin="501,113,0,0" Name="btnNewTrip" VerticalAlignment="Top" Width="75" Click="btnNewTrip_Click" />
+        <Label Content="Destination" Height="28" HorizontalAlignment="Left" Margin="89,231,0,0" Name="label1" VerticalAlignment="Top" Width="120" />
+        <Label Content="Lodging" Height="28" HorizontalAlignment="Left" Margin="310,231,0,0" Name="label2" VerticalAlignment="Top" Width="120" />
+        <Label Content="Activites on this Trip" Height="28" HorizontalAlignment="Left" Margin="51,293,0,0" Name="label3" VerticalAlignment="Top" Width="120" />
+        <Label Content="Activites" Height="28" HorizontalAlignment="Left" Margin="349,311,0,0" Name="label4" VerticalAlignment="Top" Width="120" />
+    </Grid>
+</Window>

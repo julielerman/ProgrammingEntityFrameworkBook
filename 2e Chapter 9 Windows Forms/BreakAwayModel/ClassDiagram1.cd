@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BAGA.BAEntities" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BgtABRAgAKDACBokGEMkAAAEEECQAAMEACAIAoAAACI=</HashCode>
+      <FileName>Partial Classes Added in Chapter 10\Entities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.Activity" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQADAKAAAgggAIASAABABRAAAAAAAgABACgE=</HashCode>
+      <FileName>Partial Classes Added in Chapter 10\Activity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.Address" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQQCAACAAFhAAgKMOIACBMAAChwIACEg0IIIAFQAAQA=</HashCode>
+      <FileName>Partial Classes Added in Chapter 10\Address.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.Contact">
+    <Position X="2.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQFCAECQEAmAQEIIEBUBAAAAAoAIACEAyAYABEAIAQg=</HashCode>
+      <FileName>Partial Classes Added in Chapter 10\Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.ContactPersonalInfo" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQFCBAAgAAAAAAABAAAAEAyAAACAQgEAQAIAEAgAABA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.Customer" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GyAiIAAwBRkBAECUGEIRgSAAhhHAFQEQAAIDAAQAAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.CustomersinPastYear" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BGAiAECwAAkBAkKAAVURgABAg4GIFSwQCASABGIJggg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.CustomerType" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAgAgAAAABAAAAAgAAAAAEAAAgQAQAAAAAABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.Destination" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAAAACAKCQAAAAAIASAAEAAQAAAAAAAQAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.Equipment" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAYAAAAAAgAAAAIAQAAAAAQCAAAAAAAICAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.Lodging" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAiAAAACIAwDAAFCAGBAEQIEACgAIUEBAIAEBCCBII=</HashCode>
+      <FileName>Partial Classes Added in Chapter 10\Lodging.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.Payment" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAAGASAEAgEIAMAACIACAAgCAADEAgEKQQEAAAYA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.Reservation" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQECAAGAmBBAAACAUAIIAQIAAAAAAAEA0AKAQAAAAQA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.Trip" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAAQAAIBAgACSAMIMAAAAgAEAAJQQUMAAAQMCAAYA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.vOfficeAddress" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQQCAEAQAElAAgKIIJECBMAAChwIACEgGAYIAFQAAQg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BAGA.vPaymentsforPeriod" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAEAQwBEAAEAQcBMCIQKgAACAIAAwKAQAAEAAAQg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

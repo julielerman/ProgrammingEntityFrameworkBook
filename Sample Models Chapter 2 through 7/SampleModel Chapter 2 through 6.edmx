@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProgrammingEFDB1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ProgrammingEFDB1ModelStoreContainer">
+          <EntitySet Name="Address" EntityType="ProgrammingEFDB1Model.Store.Address" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contact" EntityType="ProgrammingEFDB1Model.Store.Contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vOfficeAddresses" EntityType="ProgrammingEFDB1Model.Store.vOfficeAddresses" store:Type="Views" store:Schema="dbo" store:Name="vOfficeAddresses">
+            <DefiningQuery>SELECT 
+      [vOfficeAddresses].[FirstName] AS [FirstName], 
+      [vOfficeAddresses].[LastName] AS [LastName], 
+      [vOfficeAddresses].[addressID] AS [addressID], 
+      [vOfficeAddresses].[Street1] AS [Street1], 
+      [vOfficeAddresses].[Street2] AS [Street2], 
+      [vOfficeAddresses].[City] AS [City], 
+      [vOfficeAddresses].[StateProvince] AS [StateProvince], 
+      [vOfficeAddresses].[CountryRegion] AS [CountryRegion], 
+      [vOfficeAddresses].[PostalCode] AS [PostalCode], 
+      [vOfficeAddresses].[AddressType] AS [AddressType], 
+      [vOfficeAddresses].[ContactID] AS [ContactID], 
+      [vOfficeAddresses].[ModifiedDate] AS [ModifiedDate]
+      FROM [dbo].[vOfficeAddresses] AS [vOfficeAddresses]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Address_Contact" Association="ProgrammingEFDB1Model.Store.FK_Address_Contact">
+            <End Role="Contact" EntitySet="Contact" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="addressID" />
+          </Key>
+          <Property Name="addressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Street1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Street2" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="StateProvince" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryRegion" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddressType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ContactID" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PROGRAMMINGEFDB1.dbo.vOfficeAddresses' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vOfficeAddresses">
+          <Key>
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="addressID" />
+            <PropertyRef Name="AddressType" />
+            <PropertyRef Name="ContactID" />
+            <PropertyRef Name="ModifiedDate" />
+          </Key>
+          <Property Name="FirstName" Type="nchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="nchar" Nullable="false" MaxLength="50" />
+          <Property Name="addressID" Type="int" Nullable="false" />
+          <Property Name="Street1" Type="nchar" MaxLength="50" />
+          <Property Name="Street2" Type="nchar" MaxLength="50" />
+          <Property Name="City" Type="nchar" MaxLength="50" />
+          <Property Name="StateProvince" Type="nchar" MaxLength="50" />
+          <Property Name="CountryRegion" Type="nchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="nchar" MaxLength="20" />
+          <Property Name="AddressType" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="ContactID" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Address_Contact">
+          <End Role="Contact" Type="ProgrammingEFDB1Model.Store.Contact" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Address" Type="ProgrammingEFDB1Model.Store.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="ContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SampleModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SampleEntities"  annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Addresses" EntityType="SampleModel.Address" />
+          <EntitySet Name="Contacts" EntityType="SampleModel.Contact" />
+          <EntitySet Name="vOfficeAddresses" EntityType="SampleModel.vOfficeAddress" />
+          <AssociationSet Name="FK_Address_Contact" Association="SampleModel.FK_Address_Contact">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="addressID" />
+          </Key>
+          <Property Name="addressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Street1" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="Street2" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="StateProvince" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="CountryRegion" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
+          <Property Name="AddressType" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="ContactID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Contact" Relationship="SampleModel.FK_Address_Contact" FromRole="Address" ToRole="Contact" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="Title" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Addresses" Relationship="SampleModel.FK_Address_Contact" FromRole="Contact" ToRole="Address" />
+        </EntityType>
+        <EntityType Name="vOfficeAddress">
+          <Key>
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="addressID" />
+            <PropertyRef Name="AddressType" />
+            <PropertyRef Name="ContactID" />
+            <PropertyRef Name="ModifiedDate" />
+          </Key>
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="addressID" Type="Int32" Nullable="false" />
+          <Property Name="Street1" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="Street2" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="StateProvince" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="CountryRegion" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
+          <Property Name="AddressType" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="ContactID" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Address_Contact">
+          <End Role="Contact" Type="SampleModel.Contact" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Address" Type="SampleModel.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="ContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProgrammingEFDB1ModelStoreContainer" CdmEntityContainer="SampleEntities">
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="IsTypeOf(SampleModel.Address)">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="addressID" ColumnName="addressID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="CountryRegion" ColumnName="CountryRegion" />
+                <ScalarProperty Name="StateProvince" ColumnName="StateProvince" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Street2" ColumnName="Street2" />
+                <ScalarProperty Name="Street1" ColumnName="Street1" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="IsTypeOf(SampleModel.Contact)">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vOfficeAddresses">
+            <EntityTypeMapping TypeName="IsTypeOf(SampleModel.vOfficeAddress)">
+              <MappingFragment StoreEntitySet="vOfficeAddresses">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="addressID" ColumnName="addressID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="CountryRegion" ColumnName="CountryRegion" />
+                <ScalarProperty Name="StateProvince" ColumnName="StateProvince" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Street2" ColumnName="Street2" />
+                <ScalarProperty Name="Street1" ColumnName="Street1" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="SampleModel.Address" Width="1.5" PointX="3" PointY="0.875" Height="3.1340950520833331" IsExpanded="true" />
+        <EntityTypeShape EntityType="SampleModel.Contact" Width="1.5" PointX="0.75" PointY="1.25" Height="2.3648893229166665" IsExpanded="true" />
+        <EntityTypeShape EntityType="SampleModel.vOfficeAddress" Width="1.5" PointX="5.375" PointY="0.75" Height="3.3263964843749996" IsExpanded="true" />
+        <AssociationConnector Association="SampleModel.FK_Address_Contact" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.4324446614583333" />
+          <ConnectorPoint PointX="3" PointY="2.4324446614583333" /></AssociationConnector></Diagram></Diagrams>
+  </Designer>
+</edmx:Edmx>
