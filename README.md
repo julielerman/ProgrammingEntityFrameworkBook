@@ -11,7 +11,7 @@
 
 ## Programming Entity Framework: Code First  
 Co-Authored with [Rowan Miller](https://github.com/rowanmiller)  
-[About the book](https://www.oreilly.com/library/view/programming-entity-framework/9781449317867) 
+[About the book](https://www.oreilly.com/library/view/programming-entity-framework/9781449317867)   
  Published Nov 2011  
  ![codefirst cover](https://user-images.githubusercontent.com/5007120/117877490-a2117100-b272-11eb-8658-e28546df8a87.jpg)  
  
