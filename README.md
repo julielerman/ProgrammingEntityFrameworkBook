@@ -14,13 +14,13 @@
   
 
 [Programming Entity Framework: Code First](https://www.oreilly.com/library/view/programming-entity-framework/9781449317867),  
-Co-Authored with Rowan Miller
+Co-Authored with [Rowan Miller](https://github.com/rowanmiller)
  Published Nov 2011  
  ![codefirst cover](https://user-images.githubusercontent.com/5007120/117877490-a2117100-b272-11eb-8658-e28546df8a87.jpg)  
  
 
 [Programming Entity Framework: DbContext](https://www.oreilly.com/library/view/programming-entity-framework/9781449331825/)  
- Co-Authored with Rowan Miller
+ Co-Authored with [Rowan Miller](https://github.com/rowanmiller)
  Published Feb 2012  
  ![dbcontext cover](https://user-images.githubusercontent.com/5007120/117877496-a3429e00-b272-11eb-90ba-cceb5604a5d2.jpg)
 
